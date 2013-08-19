@@ -3,7 +3,7 @@ defmodule ExOS do
 
   def init do
     file = Path.expand('../../share/exos_nif', __FILE__)
-    :ok = :erlang.load_nif(binary_to_list(file), 1)
+    :ok = :erlang.load_nif(:binary.bin_to_list(file), 1)
   end
 
   def username() do
